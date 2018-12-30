@@ -1,0 +1,167 @@
+html{                                                  /* Only works with a html page NOT a body page! */
+    height: 100%;                                      /* To allow full circle on page */
+    background: radial-gradient(circle, #fff, #ccc);   /* Shape, color, color */
+}
+
+#container{                                            /* The outer wall called the container */
+    height: 400px;                                     /* The height of the container */
+    width:  550px;                                     /* The width of the container */
+    background-color:#9DD2EA ;                         /* The back ground color of the container */
+    margin: 100px auto;                                /* Sets container position 100px from top of page and centers container in the page */
+    padding: 20px;                                     /* Adds extra depth inside the container */
+    border-radius: 10px;                               /* Rounds the corners of the container */
+    box-shadow: 0px 4px 0px 0px #45B2AB;               /* Box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius                                                       [color] */
+    -webkit-box-shadow: 0px 4px 0px 0px #45B2AB;       /* Cross browser compatibility */
+    -moz-box-shadow: 0px 4px 0px 0px #45B2AB;          /* Cross browser compatibility */
+    position: relative;                                /* Relative to itself & container box and used with position: absolute */
+}
+
+#score{                                                /* Score box */
+    background-color: #F2FF95;                         /* Color of score box */
+    color: grey;                                       /* Text color in score box */
+    padding: 11px;                                     /* Padding around the Score text increases size of the box */
+    position: absolute;                                /* top: 0 and left: 0 */
+    left: 500px;                                       /* 500px from the left side of the container */
+    box-shadow: 0px 4px 0px #9da853;                   /* Shadow of score box */
+    -webkit-box-shadow: 0px 4px 0px 0px #45B2AB;       /* Cross browser compatibility */
+    -moz-box-shadow: 0px 4px 0px 0px #45B2AB;          /* Cross browser compatibility */
+}
+
+#correct{                                              /* Correct answer */
+    position: absolute;                                /* top: 0 and left: 0 */
+    left: 260px;                                       /* 260px from the left side of the container */
+    background-color: greenyellow;                     /* Color behind the CORRECT text */
+    color: white;                                      /* Text color of CORRECT */
+    padding: 11px;                                     /* Padding around the CORRECT text */
+    display: none;                                     /* Hides the CORRECT display */
+}
+
+#wrong{                                                /* Wrong answer */
+    position: absolute;                                /* top: 0 and left: 0 */
+    left: 235px;                                       /* 250px from the left side of the container */
+    background-color: red;                             /* Color behind the WRONG text */
+    color: white;                                      /* Text color of WRONG */
+    padding: 11px;                                     /* Padding around the WRONG text */
+    display: none;                                     /* Hides the TRY AGAIN! display */
+}
+
+#question{                                             /* The Question box (behaving as if score box & correct / try again don't exist) */
+    width: 450px;                                      /* Width of question box */
+    height: 150px;                                     /* Height of question box */
+    margin: 50px auto 10px auto;                       /* 50px from top of question box, auto right, 10px bottom, auto left */
+    background-color: #9CA0EA;                         /* Background color of question box */
+    box-shadow: 0px 4px #4E6B9C;                       /* Shadow - box color */
+    font-size: 100px;                                  /* Size of numbers in question box */
+    text-align: center;                                /* Centers number text in the middle of the question box */
+    font-family: cursive, sans-serif;                  /* Type of number font (line-height used to lower text!)*/
+    color: black;                                      /* Color of number text */
+    -webkit-box-shadow: 0px 4px 0px 0px #45B2AB;       /* Cross browser compatibility */
+    -moz-box-shadow: 0px 4px 0px 0px #45B2AB;          /* Cross browser compatibility */
+}
+
+#instruction{                                          /* Instruction box */
+    width: 450px;                                      /* Width of Instruction box */
+    height: 50px;                                      /* Height of Instruction box */
+    background-color: #B381D8;                         /* Color of Instruction box */
+    margin: 10px auto;                                 /* Margin top & bottom 10px, auto to center Instruction box */
+    text-align: center;                                /* Centers the number text in the Instruction box */
+    line-height: 45px;                                 /* Lowers the number text in the Instruction box */
+    box-shadow: 0px 4px #8552A9;                       /* Color of box shadow of Instruction box */
+    -webkit-box-shadow: 0px 4px 0px 0px #45B2AB;       /* Cross browser compatibility */
+    -moz-box-shadow: 0px 4px 0px 0px #45B2AB;          /* Cross browser compatibility */
+}
+
+#choices{                                              /* Choices container the 4 buttons are placed in */
+    width: 450px;                                      /* Width of the container */
+    height: 100px;                                     /* Height of the choices container */
+    margin: 5px auto;                                  /* Choices container top margin and center from left and right margin */
+}
+
+.box{                                                  /* The four boxes in the choices container */
+    width: 85px;                                       /* Width of choices boxes */
+    height: 85px;                                      /* Height of choices boxes */
+    background-color: white;                           /* Color of choices boxes */
+    float: left;                                       /* Places choices boxes horizontally from the vertical position */
+    margin-right: 36px;                                /* Margin right for boxes 1 - 3 only with a gap of 36px */
+    border-radius: 3px;                                /* Corners the choices 4 boxes */
+    cursor: pointer;                                   /* Changes cursor to a hand over the choices boxes */
+    box-shadow: 0px 4px white;                         /* Shadow box color */
+    text-align: center;                                /* Centers the number text in the choices boxes */
+    line-height: 80px;                                 /* height of number text inside choices boxes */
+    position: relative;                                /* Box moving relative to its position */
+    transition: all 0.2s;                              /* Time of effect on shadow box of choices boxes */
+    -webkit-transition: all 0.2s;                      /* Cross browser compatibility */
+    -moz-transition: all 0.2s;                         /* Firefox */
+    -o-transition: all 0.2s;                           /* Opera */
+    -ms-transition: all 0.2s;                          /* Microsoft */
+}
+
+.box:hover, #startreset:hover{                         /* When cursor hovers over choices boxes */
+    background-color: purple;                          /* Choices box changes color after hover */
+    color: white;                                      /* Color of number text after hover */
+    box-shadow: 0px 4px white;                         /* Box shadow color after hover */
+/*
+    transition: 0px 4px 0px 0px;                       Chrome browser
+    -webkit-box-shadow: 0px 4px 0px 0px #45B2AB;       Cross browser compatibility
+    -moz-box-shadow: 0px 4px 0px 0px #45B2AB;          Cross browser compatibility
+*/
+}
+
+.box:active, #startreset:active{                       /* Effect on choices boxes */
+    box-shadow: 0px 0px white;                         /* Box shadow color after hover */
+    top: 4px;                                          /* Choices box moves down 4px */
+/*
+    transition: 0px 4px 0px 0px;                       Chrome browser
+    -webkit-box-shadow: 0px 4px 0px 0px #45B2AB;       Cross browser compatibility
+    -moz-box-shadow: 0px 4px 0px 0px #45B2AB;          Cross browser compatibility
+*/
+
+}
+#box4{                                                 /* Box 4 only over rides actions of the other 3, because it follows them */
+    margin-right: 0px;                                 /* Over rides other boxes, places at the end 0 margin to right */
+}
+
+#startreset{                                            /* Start / Reset button */
+    background-color: #CFE8F4;                          /* Background color of start / reset button */
+    width: 78px;                                        /* Width of start / reset button */
+    padding: 10px;                                      /* Increase size of Start / Reset button */
+    margin: 0 auto;                                     /* Centers start / reset button */
+    border-radius: 3px;                                 /* Corners the start / reset button */
+    cursor: pointer;                                    /* Changes cursor to a hand over the start / reset button */
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.2);             /* Shadow box color */
+    text-align: center;                                 /* Centers the number text in the start / reset button */
+    position: relative;                                 /* Box moving relative to its position */
+    transition: all 0.2s;                               /* Time of effect on shadow box of start / reset button */
+    -webkit-transition: all 0.2s;                       /* Cross browser compatibility */
+    -moz-transition: all 0.2s;                          /* Firefox */
+    -o-transition: all 0.2s;                            /* Opera */
+    -ms-transition: all 0.2s;                           /* Microsoft */
+}
+
+#timeremaining{                                         /* Time remaining box in seconds */
+    width: 152px;                                       /* Length of Time remaining box */
+    padding: 10px;                                      /* Padding of Time remaining box around the text */
+    position: absolute;                                 /* To position inside the #container */
+    top: 395px;                                         /* 395 pixels from the top of the #container */
+    left: 400px;                                        /* 400 pixels from the left of the #container */
+    background-color: #B0E651;                          /* Background color of the time remaining box */
+    border-radius: 4px;                                 /* Rounds the corners of the time remaining box */
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.2);             /* Box shadow to bottom of the time remaining box */
+/*  visibility: hidden;                                    Hides the time remainin box from the test screen*/
+    display: none;                                      /* Doesn’t interact with any element because it is hidden - hides time remaining box */
+}
+
+#gameover{                                              /* Score box and game over box */
+    height: 200px;                                      /* Height of score box and game over box */
+    width: 500px;                                       /* Width of score box and game over box */
+    background-color: #F39B6C;                          /* Background color of score box and game over box */
+    color: white;                                       /* Text color inside the score box and game over box */
+    font-size: 2.5em;                                   /* Font size of text inside the score box and game over box */
+    text-align: center;                                 /* Centers the text inside the score box and game over box */
+    text-transform: uppercase;                          /* Transforms lowercase to Uppercase - score and game over text */
+    position: absolute;                                 /* Moves the score box and game over in the #container */
+    top: 100px;                                         /* Moves the score box and game over into position: 100px from the top of #container */
+    left: 45px;                                         /* Moves the score box and game over into position: 45px from the left of #container */
+    z-index: 2;                                         /* An element with greater stack order is always in front of an element with a lower                                                         stack order. To avoid them interacting with each others which are z-index: 0 */
+    display: none;                                      /* Hides the score box and game over box from view */
+}
